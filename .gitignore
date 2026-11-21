@@ -1,0 +1,20 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+
+# PyCharm settings
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Raw images (too big for GitHub)
+data/raw/
+
+# Saved model weights (large)
+*.pth
+*.h5
+
+# Course PDFs, just in case
+*.pdf
