@@ -1,0 +1,5 @@
+class_name,train,val,test
+Potato___Early_blight,700,150,150
+Potato___Late_blight,700,150,150
+Potato___healthy,106,23,23
+total,1506,323,323
