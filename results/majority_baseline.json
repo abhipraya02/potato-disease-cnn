@@ -1,0 +1,5 @@
+{
+  "model": "majority_class",
+  "test_accuracy": 0.46439628482972134,
+  "test_macro_f1": 0.2114164904862579
+}
