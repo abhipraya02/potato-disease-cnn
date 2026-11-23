@@ -1,0 +1,6 @@
+experiment,img_size,augment,unfreeze_last,trainable_params,train_minutes,best_val_f1,test_accuracy,test_macro_f1,healthy_recall,test_errors
+mnv3_frozen (A),224,True,0,1233923,4.9,0.987,0.981,0.968,0.913,6
+mnv3_no_aug,224,False,0,1233923,4.0,0.985,0.985,0.956,0.826,5
+mnv3_128px,128,True,0,1233923,3.3,0.97,0.978,0.966,0.913,7
+mnv3_finetune_last3,224,True,3,2984163,7.3,1.0,0.991,0.981,0.957,3
+mnv3_finetune_all,224,True,17,4205875,10.3,1.0,0.997,0.991,0.957,1
