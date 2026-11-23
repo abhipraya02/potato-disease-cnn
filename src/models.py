@@ -40,12 +40,19 @@ def count_parameters(model):
     """Number of trainable parameters."""
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
-def build_mobilenet_v3(num_classes=3, freeze_backbone=True):
-    """MobileNetV3-Large pretrained on ImageNet, with a new 3-class output layer."""
+def build_mobilenet_v3(num_classes=3, freeze_backbone=True, unfreeze_last=0):
+    """MobileNetV3-Large pretrained on ImageNet, with a new 3-class output layer.
+
+    freeze_backbone: freeze the convolutional feature extractor.
+    unfreeze_last:   if frozen, re-enable training for the last N feature blocks.
+    """
     model = models.mobilenet_v3_large(weights=models.MobileNet_V3_Large_Weights.IMAGENET1K_V2)
     if freeze_backbone:
         for p in model.features.parameters():
             p.requires_grad = False
+        if unfreeze_last > 0:
+            for p in model.features[-unfreeze_last:].parameters():
+                p.requires_grad = True
     in_features = model.classifier[-1].in_features
     model.classifier[-1] = nn.Linear(in_features, num_classes)
     return model
