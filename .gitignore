@@ -18,3 +18,5 @@ data/raw/
 
 # Course PDFs, just in case
 *.pdf
+
+data/field/
